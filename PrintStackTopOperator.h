@@ -1,18 +1,18 @@
 #pragma once
 
 #include <ostream>
-#include "Operator.h"
+#include "SingleOperandOperator.h"
 
 template<typename T>
 class PrintStackTopOperator :
-	public Operator<T>
+	public SingleOperandOperator<T>
 {
 private:
 	ostream & stream;
 
 public:
 	PrintStackTopOperator(ostream &stream);
-	const T apply(stack<T> &stack);
+	const T apply(const T &operand, stack<T> &stack);
 };
 
 template<typename T>
@@ -21,16 +21,8 @@ inline PrintStackTopOperator<T>::PrintStackTopOperator(ostream &stream) : stream
 }
 
 template<typename T>
-inline const T PrintStackTopOperator<T>::apply(stack<T> &stack)
+inline const T PrintStackTopOperator<T>::apply(const T &operand, stack<T> &stack)
 {
-	if (stack.empty())
-	{
-		throw InvalidStackStateException("The stack is empty but an operand was expected by the PrintStackOperator.");
-	}
-
-	T operand = stack.top();
-
 	stream << operand;
-
 	return operand;
 }

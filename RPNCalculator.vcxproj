@@ -161,9 +161,11 @@
     <ClInclude Include="InvalidStackStateException.h" />
     <ClInclude Include="MultiplicationOperator.h" />
     <ClInclude Include="Operator.h" />
-    <ClInclude Include="PrintStackOperator.h" />
+    <ClInclude Include="PrintStackTopOperator.h" />
+    <ClInclude Include="SingleOperandOperator.h" />
     <ClInclude Include="SubtractionOperator.h" />
     <ClInclude Include="SwapSignOperator.h" />
+    <ClInclude Include="TwoOperandOperator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

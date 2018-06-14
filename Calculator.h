@@ -12,7 +12,8 @@
 #include "MultiplicationOperator.h"
 #include "DivisionOperator.h"
 #include "SwapSignOperator.h"
-#include "PrintStackOperator.h"
+#include "PrintStackTopOperator.h"
+
 
 #include "InvalidOperatorException.h"
 
