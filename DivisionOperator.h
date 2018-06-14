@@ -15,7 +15,7 @@ const T DivisionOperator<T>::apply(stack<T> &stack)
 {
 	if (stack.size() < 2)
 	{
-		throw InvalidStackStateException("The stack is has less then 2 values but two operands were expected by the DivisionOperator.");
+		throw InvalidStackStateException("The stack has less then 2 values but two operands were expected by the DivisionOperator.");
 	}
 
 	T secondOperand = stack.top();
