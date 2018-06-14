@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class InvalidOperatorException : exception
+class InvalidOperatorException : public exception
 {
 public:
 	InvalidOperatorException(const char *const message);

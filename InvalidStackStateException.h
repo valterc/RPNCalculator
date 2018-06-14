@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class InvalidStackStateException : exception
+class InvalidStackStateException : public exception
 {
 public:
 	InvalidStackStateException(const char *const message);
