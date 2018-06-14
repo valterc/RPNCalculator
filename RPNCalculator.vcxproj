@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="InvalidInputArgumentException.cpp" />
     <ClCompile Include="InvalidOperatorException.cpp" />
     <ClCompile Include="InvalidStackStateException.cpp" />
     <ClCompile Include="main.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="AdditionOperator.h" />
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="DivisionOperator.h" />
+    <ClInclude Include="InvalidInputArgumentException.h" />
     <ClInclude Include="InvalidOperatorException.h" />
     <ClInclude Include="InvalidStackStateException.h" />
     <ClInclude Include="MultiplicationOperator.h" />

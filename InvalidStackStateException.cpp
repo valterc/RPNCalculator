@@ -6,7 +6,6 @@ InvalidStackStateException::InvalidStackStateException(const char *const message
 {
 }
 
-
 InvalidStackStateException::~InvalidStackStateException()
 {
 	this->exception::~exception();

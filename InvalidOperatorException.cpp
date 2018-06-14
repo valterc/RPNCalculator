@@ -6,7 +6,6 @@ InvalidOperatorException::InvalidOperatorException(const char *const message) : 
 {
 }
 
-
 InvalidOperatorException::~InvalidOperatorException()
 {
 	this->exception::~exception();
