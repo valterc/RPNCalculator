@@ -2,12 +2,10 @@
 
 #include <exception>
 
-using namespace std;
-
-class InvalidStackStateException : public exception
+class InvalidStackStateException : public std::exception
 {
 public:
 	InvalidStackStateException(const char *const message);
-	~InvalidStackStateException();
+	virtual ~InvalidStackStateException() = default;
 };
 

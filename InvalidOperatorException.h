@@ -2,12 +2,10 @@
 
 #include <exception>
 
-using namespace std;
-
-class InvalidOperatorException : public exception
+class InvalidOperatorException : public std::exception
 {
 public:
 	InvalidOperatorException(const char *const message);
-	~InvalidOperatorException();
+	virtual ~InvalidOperatorException() = default;
 };
 

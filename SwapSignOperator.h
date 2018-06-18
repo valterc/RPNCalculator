@@ -6,12 +6,12 @@ class SwapSignOperator :
 	public SingleOperandOperator<T>
 {
 public:
-	const T apply(const T &operand, stack<T> &stack);
+	const T apply(const T &operand, std::stack<T> &stack);
 
 };
 
 template<typename T>
-const T SwapSignOperator<T>::apply(const T &operand, stack<T> &stack)
+const T SwapSignOperator<T>::apply(const T &operand, std::stack<T> &stack)
 {
 	stack.pop();
 

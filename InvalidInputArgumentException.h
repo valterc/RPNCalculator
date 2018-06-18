@@ -2,12 +2,10 @@
 
 #include <exception>
 
-using namespace std;
-
-class InvalidInputArgumentException : public exception
+class InvalidInputArgumentException : public std::exception
 {
 public:
 	InvalidInputArgumentException(const char *const message);
-	~InvalidInputArgumentException();
+	virtual ~InvalidInputArgumentException() = default;
 };
 

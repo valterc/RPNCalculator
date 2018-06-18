@@ -6,12 +6,12 @@ class AdditionOperator :
 	public TwoOperandOperator<T>
 {
 public:
-	const T apply(const T &firstOperand, const T &secondOperand, stack<T> &stack);
+	const T apply(const T &firstOperand, const T &secondOperand, std::stack<T> &stack);
 
 };
 
 template<typename T>
-inline const T AdditionOperator<T>::apply(const T &firstOperand, const T &secondOperand, stack<T> &stack)
+inline const T AdditionOperator<T>::apply(const T &firstOperand, const T &secondOperand, std::stack<T> &stack)
 {
 	T result = firstOperand + secondOperand;
 	stack.push(result);

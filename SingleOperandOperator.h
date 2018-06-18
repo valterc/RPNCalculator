@@ -7,16 +7,16 @@ class SingleOperandOperator :
 	public Operator<T>
 {
 public:
-	const T apply(stack<T> &stack);
-	virtual const T apply(const T &operand, stack<T> &stack) = 0;
+	const T apply(std::stack<T> &stack);
+	virtual const T apply(const T &operand, std::stack<T> &stack) = 0;
 };
 
 template<typename T>
-const T SingleOperandOperator<T>::apply(stack<T> &stack)
+const T SingleOperandOperator<T>::apply(std::stack<T> &stack)
 {
 	if (stack.empty())
 	{
-		ostringstream strstream;
+		std::ostringstream strstream;
 		strstream << "The stack is empty but an operand was expected by ";
 		strstream << typeid(this).name();
 

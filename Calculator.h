@@ -13,58 +13,51 @@
 #include "DivisionOperator.h"
 #include "SwapSignOperator.h"
 #include "PrintStackTopOperator.h"
-
-
 #include "InvalidOperatorException.h"
-
-using namespace std;
 
 template<typename T>
 class Calculator
 {
 
-private:
-	unordered_map<string, unique_ptr<Operator<T>>> operators;
-	stack<T> stack;
+private:	
+	std::unordered_map<std::string, std::unique_ptr<Operator<T>>> operators;
+	std::stack<T> stack;
 
 public:
 	Calculator();
-	~Calculator();
+	virtual ~Calculator() = default;
 
-	const bool isOperator(const string& str);
-	void applyOperator(const string & str);
-	void addToStack(const T & value);
+	const bool isOperator(const std::string &str) const;
+	void applyOperator(const std::string &str);
+	void addToStack(const T &value);
 
 };
 
 template<typename T>
-inline Calculator<T>::Calculator()
+Calculator<T>::Calculator()
 {
-	operators.emplace(string("+"), make_unique<AdditionOperator<T>>());
-	operators.emplace(string("-"), make_unique<SubtractionOperator<T>>());
-	operators.emplace(string("*"), make_unique<MultiplicationOperator<T>>());
-	operators.emplace(string("/"), make_unique<DivisionOperator<T>>());
-	operators.emplace(string("~"), make_unique<SwapSignOperator<T>>());
-	operators.emplace(string("@"), make_unique<PrintStackTopOperator<T>>(cout));
+	operators.emplace("+", make_unique<AdditionOperator<T>>());
+	operators.emplace("-", make_unique<SubtractionOperator<T>>());
+	operators.emplace("*", make_unique<MultiplicationOperator<T>>());
+	operators.emplace("/", make_unique<DivisionOperator<T>>());
+	operators.emplace("~", make_unique<SwapSignOperator<T>>());
+	operators.emplace("@", make_unique<PrintStackTopOperator<T>>(cout));
 }
 
 template<typename T>
-inline Calculator<T>::~Calculator()
-{
-}
-
-template<typename T>
-inline const bool Calculator<T>::isOperator(const string & str)
+inline const bool Calculator<T>::isOperator(const std::string &str) const
 {
 	return operators.find(str) != operators.end();
 }
 
 template<typename T>
-inline void Calculator<T>::applyOperator(const string & str)
+inline void Calculator<T>::applyOperator(const std::string &str)
 {
-	if (operators.find(str) == operators.end()) {
+	auto it = operators.find(str);
 
-		ostringstream strstream;
+	if (it == operators.end()) 
+	{
+		std::ostringstream strstream;
 		strstream << "The operator '";
 		strstream << str;
 		strstream << "' is not valid";
@@ -72,11 +65,11 @@ inline void Calculator<T>::applyOperator(const string & str)
 		throw InvalidOperatorException(strstream.str().c_str());
 	}
 
-	operators[str]->apply(this->stack);
+	it->second->apply(this->stack);
 }
 
 template<typename T>
-inline void Calculator<T>::addToStack(const T & value)
+inline void Calculator<T>::addToStack(const T &value)
 {
 	this->stack.push(value);
 }

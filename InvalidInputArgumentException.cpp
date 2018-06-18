@@ -5,8 +5,3 @@
 InvalidInputArgumentException::InvalidInputArgumentException(const char *const message) : exception::exception(message)
 {
 }
-
-InvalidInputArgumentException::~InvalidInputArgumentException()
-{
-	this->exception::~exception();
-}
