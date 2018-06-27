@@ -9,3 +9,9 @@
 - Division **/**
 - Swap sign **~**
 - Print top of the stack **@**
+
+Implementations:
+
+- C++ [templates]
+- Python [lambdas]
+- Typescript [generics, lambdas]
