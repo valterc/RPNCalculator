@@ -38,9 +38,9 @@ calculator.addOperator("@", s => {
  * Process input
  */
 
-function processInput(input : string): void {
+function processInput(input: string): void {
     input.split(' ').forEach(element => {
-        if (calculator.isOperator(element)){
+        if (calculator.isOperator(element)) {
             calculator.applyOperator(element);
         } else {
             let num = parseInt(element);
@@ -50,5 +50,5 @@ function processInput(input : string): void {
 }
 
 
-processInput("4 5 * ~ @");
+processInput("4 5 * 1 + ~ @");
 

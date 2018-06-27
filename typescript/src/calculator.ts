@@ -23,7 +23,7 @@ export class Calculator<T>{
 
     public applyOperator(symbol: string): void {
 
-        if (this.isOperator(symbol) == false) {
+        if (!this.isOperator(symbol)) {
             throw new Error("Invalid operator: " + symbol);
         }
 

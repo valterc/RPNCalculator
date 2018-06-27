@@ -2,20 +2,20 @@
 export class Stack<T>{
     private data: Array<T>;
 
-    constructor(){
+    constructor() {
         this.data = new Array();
     }
 
-    public push(element: T) : void {
+    public push(element: T): void {
         this.data.push(element);
     }
 
-    public pop() : T{
+    public pop(): T {
         return this.data.pop();
     }
 
-    public peek() : T{
-        return this.data[this.data.length-1];
+    public peek(): T {
+        return this.data[this.data.length - 1];
     }
 
 }
